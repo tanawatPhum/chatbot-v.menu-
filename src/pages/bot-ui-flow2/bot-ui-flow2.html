@@ -1,0 +1,234 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            Bot UI 2
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <!-- for bot -->
+    <div class="margin-top-20" [style.margin-bottom]="mgbot">
+        <div>
+            <img class="img-for-bot" src="assets/img/bot.png">
+            <div class="message-box-left">
+                <span><strong>Bot</strong></span>
+                <p class="margin-0">Hello User<br>"What can I do for you"</p>
+            </div>
+        </div>
+        <ion-card style="border-radius: 15px;border: 1px solid;border-color: #d4cece;">
+            <ion-card-content text-left style="padding:0;">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-2 class="padding-0">
+                            <img class="img-user-list" style="margin:auto;" src="assets/img/user.jpg">
+                        </ion-col>
+                        <ion-col col-6 class="padding-0" style="padding-left: 10px;">
+                            <p style="color:#617fef; font-size: 1.4em;"><strong>#56</strong></p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center style="font-size:0.8em;padding-top:5px;">QTY.</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center style="font-size:0.8em;padding-top:5px;">STAMP</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row style="margin-top:-17px">
+                        <!-- //Note//
+                             text bottom for ion-col
+                             display:flex;
+                             align-items:flex-end;
+                        -->
+                        <ion-col col-2 class="padding-0" style="padding-top: 20px;display: flex;">
+                            <p style="margin-left:auto;margin-right:auto;">3 m.</p>
+                        </ion-col>
+                        <ion-col col-6 class="padding-0" style="padding-left: 10px;">
+                            <p>Tonkatsu Family Promotion Set</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center>1</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <img style="margin:auto;width: 20px;" src="assets/img/stamp2.png">
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card style="border-radius: 15px;border: 1px solid;border-color: #d4cece;">
+            <ion-card-content text-left style="padding:0;">
+                <!-- padding: 13px 9px 14px; -->
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-2 class="padding-0">
+                            <img class="img-user-list" style="margin:auto;" src="assets/img/user2.jpg">
+                        </ion-col>
+                        <ion-col col-6 class="padding-0" style="padding-left: 10px;">
+                            <p style="color:#617fef; font-size: 1.4em;"><strong>#57</strong></p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center style="font-size:0.8em;padding-top:5px;">QTY.</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center style="font-size:0.8em;padding-top:5px;">STAMP</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row style="margin-top:-17px">
+                        <!--align-items:flex-end;-->
+                        <ion-col col-2 class="padding-0" style="padding-top: 20px;display: flex;">
+                            <p style="margin-left:auto;margin-right:auto;">3.7 m.</p>
+                        </ion-col>
+                        <ion-col col-6 class="padding-0" style="padding-left: 10px;">
+                            <p>Soy Ramen Big Set</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center>2</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <img style="margin:auto;width: 20px;" src="assets/img/stamp2.png">
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card style="border-radius: 15px;border: 1px solid;border-color: #d4cece;">
+            <ion-card-content text-left style="padding:0;">
+                <!-- padding: 13px 9px 14px; -->
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-2 class="padding-0">
+                            <img class="img-user-list" style="margin:auto;" src="assets/img/user3.jpg">
+                        </ion-col>
+                        <ion-col col-6 class="padding-0" style="padding-left: 10px;">
+                            <p style="color:#617fef; font-size: 1.4em;"><strong>#58</strong></p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center style="font-size:0.8em;padding-top:5px;">QTY.</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center style="font-size:0.8em;padding-top:5px;">STAMP</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row style="margin-top:-17px">
+                        <!--align-items:flex-end;-->
+                        <ion-col col-2 class="padding-0" style="padding-top: 20px;display: flex;">
+                            <p style="margin-left:auto;margin-right:auto;">5 m.</p>
+                        </ion-col>
+                        <ion-col col-6 class="padding-0" style="padding-left: 10px;">
+                            <p>Tempura Medium Set</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <p text-center>1</p>
+                        </ion-col>
+                        <ion-col col-2 class="padding-0">
+                            <img style="margin:auto;width: 20px;" src="assets/img/stamp2.png">
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+
+
+        <div>
+            <img class="img-for-bot" src="assets/img/bot.png">
+            <div class="message-box-left">
+                <span><strong>Bot</strong></span>
+                <p class="margin-0">"Do you want to confirm?"</p>
+            </div>
+            <ion-card style="border-radius: 15px;border:1px solid;border-color:#d4cece;">
+                <ion-card-content text-left style="padding:0;">
+                    <!-- padding: 13px 9px 14px; -->
+                    <ion-row>
+                        <ion-col style="margin: auto;padding-left: 17px;">
+                            <span style="font-size:2.3em;color:#617fef"><strong>#56</strong></span>
+                        </ion-col>
+                        <ion-col style="margin:auto;">
+                            <p text-right class="margin-b-2" style="color:black;font-size:1.3em;">
+                                <span style="font-size:0.7em;">11:15 AM</span><br> September 18
+                            </p>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row style="margin-bottom: -5px;">
+                        <ion-col col-3 class="padding-0">
+                        </ion-col>
+                        <ion-col col-6 class="padding-0">
+                        </ion-col>
+                        <ion-col col-3 class="padding-0">
+                            <p text-center style="font-size:0.8em;padding-top:5px;">SET</p>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row style="border-bottom:1px solid; border-color:#d4cece;">
+                        <ion-col col-3 class="padding-0">
+                            <img class="img-user-list" style="margin:auto;" src="assets/img/user.jpg">
+                        </ion-col>
+                        <ion-col col-6 class="padding-0" style="padding-left: 10px;margin: auto;">
+                            <p style="color:#617fef; font-size: 1.2em;"><strong>Tongkuatsu Family Promotion Set</strong></p>
+                        </ion-col>
+                        <ion-col col-3 class="padding-0">
+                            <p text-center class="color-black" style="font-size:2.8em;"><strong>1</strong></p>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col col-6 style="border-right:1px solid; border-color:#d4cece;">
+                            <p text-center class="margin-b-2" style="color:black;margin-top: 0.8em;margin-bottom: 0.8em;">
+                                <strong> Reject </strong>
+                            </p>
+                        </ion-col>
+                        <ion-col col-6>
+                            <p text-center class="margin-b-2" style="color:black;margin-top: 0.8em;margin-bottom: 0.8em;">
+                                <strong> Accept </strong>
+                            </p>
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer style="border-top:1px solid; border-color:#d4cece;">
+    <ion-grid class="input-wrap">
+        <ion-row style="background-color: white;">
+
+            <ion-col col-2>
+                <button ion-button clear icon-only item-right (click)="switchEmojiPicker()">
+          <ion-icon class="happy"  name="md-happy"></ion-icon>
+        </button>
+            </ion-col>
+            <ion-col col-8>
+                <ion-textarea (click)="InputHideMic()" placeholder="Type your message"></ion-textarea>
+            </ion-col>
+            <ion-col col-2 *ngIf="Mic1">
+                <button ion-button clear icon-only item-right (click)="Mic1HideShowMic2()"> 
+                    <ion-icon name="mic"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-2 *ngIf="Mic2">
+                <button ion-button clear icon-only item-right (click)="MicAC2ShowHide()"> 
+                    <ion-icon name="mic"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-2 *ngIf="Mic3">
+                <button ion-button clear icon-only item-right (click)="MicAC3ShowHide()"> 
+                    <ion-icon name="mic"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-2 *ngIf="Mic4">
+                <button ion-button clear icon-only item-right (click)="MicAC4ShowHide()"> 
+                    <ion-icon name="mic"></ion-icon>
+                </button>
+            </ion-col>
+            <!-- Action 1 -->
+            <img *ngIf="MicAC1" (click)="MicClickedShow()" class="micac" src="assets/img/mic.png" />
+
+        </ion-row>
+    </ion-grid>
+    <emoji-picker *ngIf="_isOpenEmojiPicker" [(ngModel)]="editorMsg"></emoji-picker>
+</ion-footer>

@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar>
+        <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+        <ion-title text-center>
+            Smart Chat
+            <!-- {{nameUser}} -->
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content #content padding>
+    <div id="chat-autoscroll"  style="height: 100%; overflow: scroll">
+        <div *ngFor="let message of allMessages;let i = index" (selectItemEmitter)="selectItemUpdate($event)">
+            <message  (messageEmitter)="messageUpdate($event)" [message]="message" [cancelOrderedItem]="cancelOrderedItem" [selectItem]="selectItem"></message>
+        </div>
+        <div *ngIf="loading">
+            <img class="img-for-bot" src="assets/img/bot.png">
+            <div class="message-box-left-noborder">
+                <span><strong>bot</strong></span>
+                <p class="margin-0"><ion-spinner name="dots"></ion-spinner></p>
+            </div>
+        </div>
+        <!-- <div>
+            <img class="img-for-bot" src="assets/img/bot.png">
+            <div class="message-box-left-noborder">
+                <span><strong>bot</strong></span>
+                <p class="margin-0">กำลังฟัง...</p>
+            </div>
+        </div> -->
+    </div>
+</ion-content>
+<ion-footer class="border">
+    <ion-grid class="input-wrap">
+        <ion-row class="background-white ">
+            <ion-col col-2>
+                <button [disabled]="loading" ion-button clear icon-only item-right>
+                    <ion-icon  class="happy"  name="md-happy"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-8>
+                <ion-textarea (keyup)="onKey()" [disabled]="loading" (ionChange)="inputMessageChange()" [(ngModel)]="inputMessage" placeholder="Type your message"></ion-textarea>
+            </ion-col>
+            <ion-col col-2>
+                <button [disabled]="loading" ion-button clear icon-only item-right (click)="inputByClick()"> 
+                    <ion-icon style="color:#6D6D6D" name="{{iconHandleInput}}"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-12 class="{{micState}}">
+                <div *ngIf="micState=='micshow'" class="icon-mic"></div>
+                <div *ngIf="micState=='micshow'" class="active"></div>
+            </ion-col>    
+            <!-- <img  (click)="inputByMic()" class="micac {{micState}}" src="assets/img/{{iconMic}}" /> -->
+        </ion-row>
+    </ion-grid>
+    <emoji-picker *ngIf="_isOpenEmojiPicker" [(ngModel)]="editorMsg"></emoji-picker>
+</ion-footer>

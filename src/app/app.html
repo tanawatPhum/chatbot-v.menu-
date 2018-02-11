@@ -1,0 +1,34 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar style="padding:0">
+      <div style="background-image: url('assets/img/bg-road-blurred.jpg');background-position: center center;background-repeat: no-repeat;background-size: cover;">
+        <ion-item class="avatar-item">
+          <ion-avatar item-left>
+            <img style="width: 96px; height: auto;box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.8);border: solid 1px rgba(255, 255, 255, 0.7);" src="assets/img/user.jpg" />
+          </ion-avatar>
+        </ion-item>
+        <ion-item class="avatar-item grow-shadow" color="dark">
+          <h1>USER NAME</h1>
+          <ion-row nowrap>
+            <ion-col col-12>
+              <span>USER</span>
+              <span style="margin-left: .75em">NAME</span>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

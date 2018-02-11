@@ -1,0 +1,311 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            Select Product
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding id="page2">
+    <ion-label id="selectProduct-heading1" style="color:#000000;">
+        Please select products
+    </ion-label>
+    <form id="selectProduct-form1">
+        <!-- <ion-item-sliding>
+            <ion-item color="none" on-click="goToFillDetail()" id="selectProduct-list-item2">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/oil.jpg" />
+                </ion-thumbnail>
+                <h2>
+                    Fill Detail
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToTestPage()" id="selectProduct-list-item7">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/belt.jpg"/>
+                </ion-thumbnail>
+                <h2>
+                    Test Page
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding> -->
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToHelpPage()" id="selectProduct-list-item8">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/rain.jpg"/>
+                </ion-thumbnail>
+                <h2>
+                    Help Page
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToBrandPagetest()" id="selectProduct-list-item9">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/scan.png" />
+                </ion-thumbnail>
+                <h2>
+                    Scan - Fill Car Detail
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToSearchPage()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/search.png" />
+                </ion-thumbnail>
+                <h2>
+                    Search Page
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToGarageDetail()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/form.png" />
+                </ion-thumbnail>
+                <h2>
+                    Garage Detail
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToConfirmPage()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/ok.png" />
+                </ion-thumbnail>
+                <h2>
+                    Confirm Page
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToSelectCategory()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Select Category
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToBrandPage()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Brand Page
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToProductDetail()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Product Detail
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToAddCart()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Add to Cart
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToCartPage()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Cart Page
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToNewBrandPage()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    New Brand Page
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToSelectCarPage()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Select Car
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToNewSelectCategory()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    New Select Category
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToBrandPageAll()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Brand Page All
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToNewProductDetail()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    New Product Detail
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToSelectGarage()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Select Garage Type
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToNewGarageDetail()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    New Garage Detail
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToSelectOtherCar()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Select Other Car
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+            <ion-item color="none" on-click="goToSelectDate()">
+                <ion-thumbnail item-left>
+                    <img src="assets/img/category.png" />
+                </ion-thumbnail>
+                <h2>
+                    Select Date
+                </h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="dark"></button>
+                <button ion-button color="positive"></button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </form>
+</ion-content>

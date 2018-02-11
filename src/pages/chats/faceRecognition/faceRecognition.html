@@ -1,0 +1,25 @@
+<ion-header>
+    <!-- <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            User Name
+        </ion-title>
+    </ion-navbar> -->
+</ion-header>
+<ion-content padding class="bg-color">
+        <div class="content-width">
+            <p no-margin text-center class="font-size-3 color-white">Smart Chat</p>
+            <div text-center>
+                <img class="margin-top-2-5 user-face-img" src="{{faceUser}}" />
+            </div>
+            <p text-center class="margin-top-2-5 margin-bottom-2-5 font-size-1-5 color-white">{{textDisplay}}</p>
+            <div text-center>
+                <!-- <button ion-button class="color-blue-text btn-photo-continue" [hidden]="!hasDetect" (click)="takePicture()" >
+                        <ion-icon style="font-size:2.5em;color:#424242" ios="ios-camera" md="md-camera"></ion-icon>
+                </button> -->
+                <button ion-button class="color-blue-text btn-photo-continue"  (click)="goToChats()" >ไปยังแชท</button>
+            </div>
+        </div>
+</ion-content>

@@ -1,0 +1,131 @@
+<!--component html goes here -->
+<div *ngIf="message" class="margin-top-20" [style.margin-bottom]="mgbot">
+    <div class="message-{{message.positionChatterImg}}">
+        <div class="position-relative">
+            <img class="user-image" src="{{message.chatterImg}}">
+        </div>
+        <div class="msg-detail">
+            <div class="message-box">
+                <span><strong>{{message?.chatterName}}</strong></span>
+                <p class="margin-0">
+                    <span *ngIf="message.raw.type==typeOfMessageFirst">สวัสดี<br></span>
+                    <span *ngIf="message.raw.type!=typeOfMessageListOrder">{{message?.message}}</span>
+                    <span *ngIf="message.raw.type==typeOfMessageListOrder">{{message?.raw.ed}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="message.raw.type=='LIST_ORDER'||message.raw.type=='LIST_ORDERED'">
+        <ion-grid class="padding-0 margin-top-1 margin-left-1">
+            <ion-row>
+                <ion-col *ngFor="let item of message.raw.items;let seq = index" col-6 class="padding-0 margin-minus-7">
+                    <ion-card class="border boder-radius-15">
+                        <img class="img-item" src="{{requestBotMessageUrl}}{{item.image}}" />
+                        <ion-card-content text-left class="padding-0">
+                            <ion-card-title text-center class="card-title card-fix-height color-light-black" style="font-weight: 600;">
+                                {{item?.caption}}
+                            </ion-card-title>
+                            <ion-row class="card-row">
+                                <ion-col>
+                                    <p text-center class="color-gery font-1-1">
+                                        ฿ <strong class="color-black" style="font-size:1.3em; font-weight: 900;"> {{item?.price}} </strong>
+                                    </p>
+                                </ion-col>
+                            </ion-row>
+                            <p text-center class="btn-buy">
+                                <button *ngIf="message.raw.type=='LIST_ORDER'" style="width:100%;height:100%;background:white" [disabled]="selectItem" (click)="sendSelectItem(item,seq)"> ซื้อ </button>
+                                <button *ngIf="message.raw.type=='LIST_ORDERED'" style="width:100%;height:100%;background:white" [disabled]="cancelOrderedItem" (click)="sendCancleOrderedItem(item)"> ยกเลิก </button>
+                            </p>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div *ngIf="message.raw.type=='CONFIRM_ORDER'">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-card class="border boder-radius-15 margin-top-1-3">
+                        <img class="img-item-confirm" src="{{requestBotMessageUrl}}{{message.raw.items[0]?.image}}" />
+                        <ion-card-content text-left class="padding-0">
+                            <ion-card-title class="card-title-confirm">
+                                <strong>{{message.raw.items[0]?.caption}}</strong>
+                            </ion-card-title>
+                            <ion-row class="card-confirm-row">
+                                <ion-col class="margin-auto">
+                                    <div padding text-left class="div-add-del">
+                                       <button [disabled]="confirmItem" (click)="decrementItem(message.raw.items[0])" style="background:white"><ion-icon class="add-btn" name="ios-remove-circle-outline"> </ion-icon></button>
+                                        <span class="text-number">{{numberItem}}</span>
+                                        <button [disabled]="confirmItem" (click)="incrementItem(message.raw.items[0])" style="background:white"><ion-icon class="del-btn" name="ios-add-circle-outline"> </ion-icon></button>
+                                    </div>
+                                </ion-col>
+                                <ion-col class="margin-auto card-confirm-padding">
+                                    <p text-right class="color-black font-1-3">
+                                        ฿ <strong class="font-1-5"> {{message.raw.items[0]?.totalPrice||message.raw.items[0]?.price}}  </strong>
+                                    </p>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col col-6 class="border-right">
+                                    <p text-center class="color-black btn-no">
+                                        <button style="width:100%;height:100%;background:white" [disabled]="confirmItem" (click)="sendCancleItem()"> ยกเลิก </button>
+                                    </p>
+                                </ion-col>
+                                <ion-col col-6>
+                                    <p text-center class="margin-b-2 color-black btn-yes">
+                                        <button style="width:100%;height:100%;background:white" [disabled]="confirmItem" (click)="sendConfrimItem(message)"> ยืนยัน </button>
+                                    </p>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div *ngIf="message.raw.type=='ORDER_SUCCESS'">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-card class="boder-radius-15 border margin-top-1-3">
+                        <ion-card-content text-left class="padding-0">
+                            <ion-row class="border">
+                                <ion-col class="margin-auto">
+                                    <img class="margin-left-1 img-summary" src="{{requestBotMessageUrl}}{{message.raw.items[0]?.image}}" />
+                                </ion-col>
+                                <ion-col class="margin-auto">
+                                    <p text-right class="margin-b-2 color-black font-1-3">
+                                        <span class="font-1">{{dateOfSuccessOrder|amLocale:'th'|amDateFormat: 'HH:mm'}}</span><br>{{dateOfSuccessOrder|amLocale:'th'|amDateFormat:'LL'}}
+                                    </p>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row class="background-balance">
+                                <ion-col class="margin-auto">
+                                    <div padding text-left class="div-add-del">
+                                        <p class="font-1-3 color-white"> รวมทั้งหมด </p>
+                                    </div>
+                                </ion-col>
+                                <ion-col class="margin-auto">
+                                    <p text-right class="font-1-3 color-white">
+                                        ฿ <strong class="font-1-5"> {{message.raw.items[0]?.price*message.raw.items[0]?.qty}} </strong>
+                                    </p>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+    <div *ngIf="loading">
+        <img class="img-for-bot" src="assets/img/bot.png">
+        <div class="message-box-left-noborder">
+            <span><strong>bot</strong></span>
+            <p class="margin-0">
+                <ion-spinner name="dots"></ion-spinner>
+            </p>
+        </div>
+    </div>
+</div>
